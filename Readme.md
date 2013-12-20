@@ -69,7 +69,7 @@ Consultar más información sobre [qué es un Fork] [17].
  
  dec-google_docs.js v1.0: función que actúa como interfaz con Google spreadsheet
  
- dec-principal.js v1.0: función principal que añade los marcadores en el mapa de acuerdo con la información contenida en Google spreadsheet.
+ dec-principal.js v1.0: función principal que añade los marcadores en el mapa de acuerdo con la información contenida en Google spreadsheet..
 
 - /docs/: directorio con el código documentado en formato HTML. 
 
