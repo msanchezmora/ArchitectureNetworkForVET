@@ -9,7 +9,7 @@
 // Definición variables globales
 // ------------------------------
 var DEBUG_GOOGLE = 0;
-
+var id = '0ApaZkqgevJCgdFdRc0dwbHlXWHkzVW9PYnZ0cFY4elE';
 // Función Auxiliar
 // --------------------
 // Esta función extrae la información de la spreadsheet de Google Drive con el `id` especificado. 
@@ -38,6 +38,7 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                 lonfield = f;     
             }
         }
+
         // Bucle for para cada fila de la spreadsheet, que corresponde con un edificio abandonado.
         // GeoJson Format needed 19-12-2013
         for (var i = 0; i < x.feed.entry.length; i++) {                             
@@ -47,16 +48,19 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                 // Obtener cada columna de la fila actual en formato texto.
                 "properties": {
                     'marker-color':'#0d5ca8',
-                    'titulo': entry['gsx$titulo'].$t,
-                    'direccion': entry['gsx$direccion'].$t,
-                    'descripcion': entry['gsx$descripcion'].$t,  
-                    'estado': entry['gsx$estado'].$t,
-                    'enlace': entry['gsx$enlace'].$t,  
-                    'categoria': entry['gsx$categoria'].$t, 
-                    'masinfo': entry['gsx$masinfo'].$t,
-                    'referencia': entry['gsx$referencia'].$t 
+                    'name': entry['gsx$name'].$t,
+                    'contact-person': entry['gsx$contact-person'].$t,
+                    'type-of-institution': entry['gsx$type-of-institution'].$t,  
+                    'category': entry['gsx$category'].$t,
+                    'country': entry['gsx$country'].$t,  
+                    'city': entry['gsx$city'].$t, 
+                    'web-page': entry['gsx$web-page'].$t,
+                    'address': entry['gsx$address'].$t,
+                    'email': entry['gsx$email'].$t,
+                    'description': entry['gsx$description'].$t 
                 }
                 };
+            //   Brief Description of VET themes (MAXIMUM 100 words)
             // Para la latitud y longitud es necesario convertir a float. 
             for (var y in entry) {
                 if (y === latfield){
