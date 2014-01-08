@@ -9,12 +9,12 @@ var DEBUG_MAP = 0;
 var map;
 // Definición de los identificadores para el mapa y la fuente de los datos en **Google Drive**.
 // Sustituir por vuestros identificadores específicos.
-var data_id = '0Asc521FZEVkpdFNEYl9UTnNkV0FOdXdEME9keVhnanc';
-var map_id  = 'colaborativa.OSMCordoba';
+var data_id = '0ApaZkqgevJCgdFdRc0dwbHlXWHkzVW9PYnZ0cFY4elE';
+var map_id  = 'colaborativa.gop5774e';
 
 // Creación e inicialización del objeto mapa
 var map = L.mapbox.map('map', map_id, {gridControl: false});
-map.setView({ lat: 37.885, lon: -4.79 }, 14);
+map.setView({ lat: 47.547, lon: 18.545 }, 5);
     
 $( document ).ready(function() {
 // Función Principal
@@ -36,34 +36,39 @@ function mapData(f) {
      // Ahora se añaden los markers al mapa en formato GeoJSON.  
     var markerLayer = L.mapbox.markerLayer(features)
     .addTo(map);
-    
+    // 'Name' 'Contact-Person''Type-of-Institution''Category''Country'
+    // 'City''Web-page''Address''Email'Description'
     
     var mustacheTemplate = '<a class="closeWindow" href="#">&#10006;</a>' +
     '<script> $(".closeWindow").click(function(){ $("#contentDetail").removeClass("activo").addClass("inactivo"); return false; });</script>'+
-    '<h1 class="map-title"><span class="element-invisible">#DisponibleEnCordoba</span></h1>'+
-    '<h2>{{titulo}}</h2>'+
-    '<h3>{{direccion}}</h3>'+
-    '<script> if ("{{enlace}}" != ""){'+
-    '$("#contentDetail h3").append("'+"<div class='imagen'><img src='{{enlace}}' alt='{{titulo}}''> </div>"+'");'+
+    '<h1 class="map-title"><span class="element-invisible">#NetworkVocationalArchitecture</span></h1>'+
+    '<h2>{{name}}</h2>'+
+    '<h3> {{type-of-institution}} · {{category}}</h3>'+
+    '<h3>{{city}} {{country}} </h3>'+
+    '<p id="descripcion">{{description}}</p>'+
+     '<script> if ( "{{email}}" != "") {'+
+    '$("#contentDetail #descripcion").append("'+"<p><a href='mailto:{{email}}'>Contact Email </a></p>"+'");'+
     '}</script>'+
-    '<p id="descripcion" >{{descripcion}}</p>'+
-    '<script> if ("{{referencia}}" != ""){'+
-    '$("#contentDetail #descripcion").append("' + "<p> <em>Referencia catastral:</em><br><a href='https://www1.sedecatastro.gob.es/OVCFrames.aspx?TIPO=consulta'>{{referencia}}</a> </p>"+'");'+
-    '}</script>'+
-     '<script> if ("{{masinfo}}" != "") {'+
-    '$("#contentDetail #descripcion").append("'+"<p><a href='{{masinfo}}'>Enlace externo</a></p>"+'");'+
+    '<script> if ( "{{web-page}}" != "") {'+
+    '$("#contentDetail #descripcion").append("'+"<p><a href='{{web-page}}'>Additional Information</a></p>"+'");'+
     '}</script>'+
     '<p class="footer">'+
     '<a href="http://colaborativa.eu"> Colaborativa.eu</a> 2013. Datos abiertos con licencia '+
     '<a href="http://opendatacommons.org/licenses/odbl/">ODC-ODbL</a>. Textos e imágenes de la web con licencia <a href="http://creativecommons.org/licenses/by/2.0/es/">CC-BY-SA 2.0.</a>'+
     '</p>';
-    markerLayer.on('click', function(e) {
+    markerLayer.eachLayer(function(layer){
+    // here you call `bindPopup` with a string of HTML you create - the feature
+    // properties declared above are available under `layer.feature.properties`
+        var content = layer.feature.properties.name;
+        layer.bindPopup(content);
+    });
+    markerLayer.on('click', function(e){
             e.layer.unbindPopup();
             $('#contentDetail').removeClass('inactivo').addClass('activo'); 
             $('#contentDetail').html('');
             var html = Mustache.to_html(mustacheTemplate, e.layer.feature.properties);
             $('#contentDetail').html(html);
-        });
+    });
     // Llamada a la función `download_data` definida más abajo.
     download_data();
 }
