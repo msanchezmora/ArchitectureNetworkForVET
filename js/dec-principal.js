@@ -36,6 +36,7 @@ function mapData(f) {
      // Ahora se añaden los markers al mapa en formato GeoJSON.  
     var markerLayer = L.mapbox.markerLayer(features)
     .addTo(map);
+    
     // 'Name' 'Contact-Person''Type-of-Institution''Category''Country'
     // 'City''Web-page''Address''Email'Description'
     
@@ -64,10 +65,12 @@ function mapData(f) {
     });
     markerLayer.on('click', function(e){
             e.layer.unbindPopup();
+            $('#map .leaflet-popup').css('display','none');
             $('#contentDetail').removeClass('inactivo').addClass('activo'); 
             $('#contentDetail').html('');
             var html = Mustache.to_html(mustacheTemplate, e.layer.feature.properties);
             $('#contentDetail').html(html);
+            e.layer.bindPopup();
     });
     // Llamada a la función `download_data` definida más abajo.
     download_data();
