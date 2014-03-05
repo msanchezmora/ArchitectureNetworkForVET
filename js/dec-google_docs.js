@@ -38,7 +38,12 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                 lonfield = f;     
             }
         }
-
+        var institution =[["Higher Education Center", "#334D5C"],
+                          ["Primary or Secondary Education Center", "#45B29D"], 
+                          ["Architecture Center", "#EFC94C"],
+                          ["Private Practice", "#E27A3F"],
+                          ["Professional Body", "#DF5A49"],
+                          ["Other","#BBBBBB"]];
         // Bucle for para cada fila de la spreadsheet, que corresponde con un edificio abandonado.
         // GeoJson Format needed 19-12-2013
         for (var i = 0; i < x.feed.entry.length; i++) {                             
@@ -47,7 +52,7 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                 "geometry": {"type": "Point",coordinates: []},
                 // Obtener cada columna de la fila actual en formato texto.
                 "properties": {
-                    'marker-color':'#0d5ca8',
+                    'marker-color':'#FFFFFF',
                     'name': entry['gsx$name'].$t,
                     'contact-person': entry['gsx$contact-person'].$t,
                     'type-of-institution': entry['gsx$type-of-institution'].$t,  
@@ -60,6 +65,11 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                     'description': entry['gsx$description'].$t 
                 }
                 };
+                for (var z = 0; z < institution.length; z++) {   
+                    if ( feature.properties['type-of-institution'] == institution[z][0]){
+                        feature.properties['marker-color'] = institution[z][1];
+                    }
+                } // end for                
             //   Brief Description of VET themes (MAXIMUM 100 words)
             // Para la latitud y longitud es necesario convertir a float. 
             for (var y in entry) {

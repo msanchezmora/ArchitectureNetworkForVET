@@ -63,6 +63,13 @@ function mapData(f) {
         var content = layer.feature.properties.name;
         layer.bindPopup(content);
     });
+    var clusterGroup = new L.MarkerClusterGroup();
+    markerLayer.eachLayer(function(layer) {
+        clusterGroup.addLayer(layer);
+    });
+    map.addLayer(clusterGroup);
+    map.legendControl.addLegend(document.getElementById('legend-content').innerHTML);
+    
     markerLayer.on('click', function(e){
             e.layer.unbindPopup();
             $('#map .leaflet-popup').css('display','none');
