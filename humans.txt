@@ -15,6 +15,6 @@
 
 /* SITE */
     Last update:2013/02/17
-    Language:Spanish
+    Language:English
     Doctype:HTML5
     IDE: HTML, Underscore, Mapbox
