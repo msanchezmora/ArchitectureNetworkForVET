@@ -42,9 +42,8 @@ function mapData(f) {
     
     var mustacheTemplate = '<a class="closeWindow" href="#">&#10006;</a>' +
     '<script> $(".closeWindow").click(function(){ $("#contentDetail").removeClass("activo").addClass("inactivo"); return false; });</script>'+
-    '<h1 class="map-title"><span class="element-invisible">#NetworkVocationalArchitecture</span></h1>'+
-    '<h2>{{name}}</h2>'+
-    '<h3> {{type-of-institution}} · {{category}}</h3>'+
+    '<h1>{{name}}</h1>'+
+    '<h2> {{type-of-institution}} · {{category}}</h2>'+
     '<h3>{{city}} {{country}} </h3>'+
     '<p id="descripcion">{{description}}</p>'+
      '<script> if ( "{{email}}" != "") {'+

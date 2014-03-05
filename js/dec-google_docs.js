@@ -38,8 +38,8 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                 lonfield = f;     
             }
         }
-        var institution =[["Higher Education Center", "#334D5C"],
-                          ["Primary or Secondary Education Center", "#45B29D"], 
+        var institution =[["Higher Education", "#334D5C"],
+                          ["Primary or Secondary Education", "#45B29D"], 
                           ["Architecture Center", "#EFC94C"],
                           ["Private Practice", "#E27A3F"],
                           ["Professional Body", "#DF5A49"],
@@ -52,7 +52,7 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                 "geometry": {"type": "Point",coordinates: []},
                 // Obtener cada columna de la fila actual en formato texto.
                 "properties": {
-                    'marker-color':'#FFFFFF',
+                    'marker-color':'#BBBBBB',
                     'name': entry['gsx$name'].$t,
                     'contact-person': entry['gsx$contact-person'].$t,
                     'type-of-institution': entry['gsx$type-of-institution'].$t,  
