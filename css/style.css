@@ -378,3 +378,50 @@ form.geocode.loading input[type=submit] {
     }
 
   }
+
+/* LEGEND STYLE */
+#legend-content{
+  visibility: hidden;
+}
+.map-legends{
+  width:240px !important;
+}
+.my-legend .legend-title {
+  text-align: left;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 90%;
+  }
+.my-legend .legend-scale ul {
+  margin: 0;
+  padding: 0;
+  float: left;
+  list-style: none;
+  padding-bottom: 5px;
+  }
+.my-legend .legend-scale ul li {
+  display: block;
+  float: left;
+  width: 240px;
+  margin-bottom: 4px;
+
+  text-align: left;
+  font-size: 80%;
+  list-style: none;
+  }
+.my-legend ul.legend-labels li span {
+  display: block;
+  float: left;
+  margin-right: 5px;
+  height: 20px;
+  width: 20px;
+  }
+.my-legend .legend-source {
+  font-size: 70%;
+  color: #999;
+  clear: both;
+  }
+.my-legend a {
+  color: #777;
+  }
+
