@@ -29,5 +29,5 @@ task :test do
 end
 
 task :launch do
-  sh "jekyll"
+  sh "jekyll serve -w"
 end
