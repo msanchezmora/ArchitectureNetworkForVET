@@ -25,8 +25,11 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     <script src="ext/jquery.min.js"></script>
-    <script src='//api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.js'></script>
-    <link href='//api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.css' rel='stylesheet' />
+    <script src='//api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+    <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+    <link href='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+    <link href='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
     <script src="ext/mustache.js"></script>
     <script src='ext/jquery.emailSpamProtection.js' type='text/javascript'></script>
     <script>
@@ -52,7 +55,59 @@
     </div>
     <div id="contentDetail" class="inactivo">
     </div>
-    <div id="map" class="map"></div>
+    <div id="map" class="map">
+  <div id='legend-content'>
+  <div class='my-legend'>
+  <div class='legend-title'>Type of Institutions</div>
+  <div class='legend-scale'>
+    <ul class='legend-labels'>
+      <li><span style='background:#334D5C;'></span>Higher Education Center</li>
+      <li><span style='background:#45B29D;'></span>Primary or Secondary Education Center</li>
+      <li><span style='background:#EFC94C;'></span>Architecture Center</li>
+      <li><span style='background:#E27A3F;'></span>Private Practice</li>
+      <li><span style='background:#DF5A49;'></span>Professional Body</li>
+      <li><span style='background:#BBBBBB;'></span>Other</li>
+    </ul>
+  </div>
+  </div>
+  <style type='text/css'>
+    .my-legend .legend-title {
+      text-align: left;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 90%;
+      }
+    .my-legend .legend-scale ul {
+      margin: 0;
+      padding: 0;
+      float: left;
+      list-style: none;
+      }
+    .my-legend .legend-scale ul li {
+      display: block;
+      float: left;
+      width: 150px;
+      margin-bottom: 6px;
+      text-align: center;
+      font-size: 80%;
+      list-style: none;
+      }
+    .my-legend ul.legend-labels li span {
+      display: block;
+      float: left;
+      height: 10px;
+      width: 150px;
+      }
+    .my-legend .legend-source {
+      font-size: 70%;
+      color: #999;
+      clear: both;
+      }
+    .my-legend a {
+      color: #777;
+      }
+  </style>
+    </div>
     <script src='https://www.google.com/jsapi'></script>
     <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
     <script src='ext/underscore.min.js'></script>
