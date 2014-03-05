@@ -122,19 +122,18 @@ a:hover{
 /* Main branding title
 */
 h1 {
-  background:url(../img/EuropeanArchitectureNetwork.png) top center no-repeat;
+  /* background:url(../img/EuropeanArchitectureNetwork.png) top center no-repeat; */
   background-size: contain;
-  width: 290px;
-  height: 70px;
   box-sizing:border-box;
   -moz-box-sizing:border-box; /* Firefox */
   -webkit-box-sizing:border-box; /* Safari */
-  font-family: 'ColaborativaSemibold';
-  line-height: 2.0em;
-  font-size: 1.8em;
-  margin-bottom: 0px;
-  margin-left: -10px;
+  font-family: 'Droid Sans', sans-serif;
+  line-height: 1.3em;
+  font-size: 1.6em;
+  margin-bottom: 5px;
+  margin-left: -5px;
   padding: 5px 0 5px 5px;
+  padding-top: 0px;
   color: #0d5ca8;
   z-index: 1000;
 }
@@ -147,6 +146,18 @@ h2 {
   font-family: 'Droid Sans', sans-serif;
   padding-bottom: 25px;
   margin-bottom: 0px;
+}
+h3{
+  font-style:italic;
+  margin-bottom: 10px;
+}
+#about{
+  margin-bottom: 40px;
+}
+.credits{
+  margin-top: 5px;
+  font-size:0.9em;
+  line-height: 1.3em;
 }
 .footer{
   margin-top: 20px;
@@ -201,7 +212,7 @@ body > div {
   top:0;
   right:0;
   bottom:0;
-  left:340px;
+  left:380px;
   z-index:0;
 }
 a.zoomer {
@@ -231,7 +242,7 @@ a.zoomer {
   top:0px;
   right:0;
   bottom:0;
-  width:279px;
+  width:319px;
   background:rgb(250,250,250);
   border-left:1px solid #ccc;
   overflow-x:hidden;
@@ -249,7 +260,7 @@ a.zoomer {
   display: none;
 }
 #contentDetail h2{
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 #contentDetail .imagen img{
   width: 100%;
