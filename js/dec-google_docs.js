@@ -52,7 +52,7 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
                 "geometry": {"type": "Point",coordinates: []},
                 // Obtener cada columna de la fila actual en formato texto.
                 "properties": {
-                    'marker-color':'#FFFFFF',
+                    'marker-color':'#BBBBBB',
                     'name': entry['gsx$name'].$t,
                     'contact-person': entry['gsx$contact-person'].$t,
                     'type-of-institution': entry['gsx$type-of-institution'].$t,  
