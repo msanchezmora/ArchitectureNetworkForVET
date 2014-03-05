@@ -54,8 +54,8 @@ function mapData(f) {
     '$("#contentDetail #descripcion").append("'+"<p><a href='{{web-page}}'>Additional Information</a></p>"+'");'+
     '}</script>'+
     '<p class="footer">'+
-    '<a href="http://colaborativa.eu"> Colaborativa.eu</a> 2013. Datos abiertos con licencia '+
-    '<a href="http://opendatacommons.org/licenses/odbl/">ODC-ODbL</a>. Textos e imágenes de la web con licencia <a href="http://creativecommons.org/licenses/by/2.0/es/">CC-BY-SA 2.0.</a>'+
+    '<a href="http://colaborativa.eu"> Colaborativa.eu</a> 2013. Free Code with license '+
+    '<a href="http://opensource.org/licenses/MIT">MIT</a> available in <a href="https://github.com/msanchezmora/ArchitectureNetworkForVET">GitHub</a>. Open Data with license <a href="http://opendatacommons.org/licenses/odbl/">ODC-ODbL</a>. Texts and images with license <a href="http://creativecommons.org/licenses/by/3.0/es/">CC BY 3.0 ES.</a>'+
     '</p>';
     markerLayer.eachLayer(function(layer){
     // here you call `bindPopup` with a string of HTML you create - the feature
