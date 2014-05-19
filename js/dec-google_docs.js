@@ -26,8 +26,8 @@ function mmg_google_docs_spreadsheet_1(id, callback) {
     function response(x) {
         if( DEBUG_GOOGLE) { console.log("function response");}
         var GeoJSON_Array = [],
-            latfield = '',
-            lonfield = '';
+            latfield = '40.0',
+            lonfield = '-3.0';
         // Chequear que los datos son válidos antes de continuar.
         if (!x || !x.feed) return GeoJSON_Array;
         for (var f in x.feed.entry[0]) {
